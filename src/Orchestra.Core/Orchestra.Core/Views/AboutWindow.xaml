@@ -5,7 +5,7 @@
 				  xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
 				  ResizeMode="NoResize"
                   WindowStyle="None"
-                  >
+                  SnapsToDevicePixels="True" UseLayoutRounding="True">
 
     <Window.Resources>
         <catel:BooleanToCollapsingVisibilityConverter x:Key="BooleanToCollapsingVisibilityConverter" />
