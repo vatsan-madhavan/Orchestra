@@ -88,7 +88,7 @@ namespace Orchestra
                 writer.Flush();
             }
 
-#if NETCORE
+#if NETCORE && false
             // Note: because .NET Core can't read IsReadonly="False", we need to remove it
             var fileContents = File.ReadAllText(fileName);
             if (!string.IsNullOrWhiteSpace(fileContents))
