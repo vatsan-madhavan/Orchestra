@@ -1,3 +1,12 @@
+Repro for https://github.com/dotnet/wpf/issues/47
+=================================================
+
+- Use Orchestra.Examples.Ribbon.Fluent
+- Add https://www.myget.org/F/catel/api/v3/index.json to your Nuget package sources
+- Build using build.ps1 
+- Run the example application on net472 vs netcoreapp3.0 and observe the difference in the saved Xaml. 
+  - Pay attention to `Orchestra.FluentRibbonHelper.ApplyTheme()`
+
 Orchestra
 =========
 
