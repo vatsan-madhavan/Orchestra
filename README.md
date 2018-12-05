@@ -1,4 +1,4 @@
-Repro for https://github.com/dotnet/wpf/issues/47
+Reproduction instructions for https://github.com/dotnet/wpf/issues/47
 =================================================
 
 - Use Orchestra.Examples.Ribbon.Fluent
@@ -6,6 +6,10 @@ Repro for https://github.com/dotnet/wpf/issues/47
 - Build using build.ps1 
 - Run the example application on net472 vs netcoreapp3.0 and observe the difference in the saved Xaml. 
   - Pay attention to `Orchestra.FluentRibbonHelper.ApplyTheme()`
+  - The difference in the generation `ApplicationAccentColors.xaml` is shown in the [PDF](ApplicationAccentColors.xaml.pdf)
+    - Notably, the netcoreapp3.0 version of the xaml includes `IsReadOnly="false"` element in `ResourceDictionary`. Being a read-only property, 
+      we are unable to read this XAML successfully. 
+    - The order and formatting of elements and properties seems very different between the two versions. We should investigate whether there are other salient differences.
 
 Orchestra
 =========
